@@ -1,0 +1,36 @@
+# Previous Instructions
+
+## UI/UX Enhancements
+- Add a loading animation while generating the itinerary
+- Fix map localization to display relevant locations instead of ocean
+- Update UI to match Airbnb's design system:
+  - Clean, modern layout
+  - Card-based components
+  - Responsive grid system
+  - Consistent typography and spacing
+  - Location-based map integration
+  - Loading state animations and transitions
+
+## Map Functionality
+- Fix routing functionality in the map component:
+  - Add leaflet-routing-machine dependency
+  - Import correct CSS path
+  - Implement route visualization between selected cities similar to Google Maps
+
+## Critical Guidelines
+- Use modular, reusable components
+- Maintain small file sizes
+- Avoid single, large files for functionality
+- When modifying files, always provide full, updated content
+- Include all code, never use placeholders
+- Show complete, up-to-date file contents when updating
+- Avoid truncation or summarization in code
+
+For all designs I ask you to make, have them be beautiful, not cookie cutter. Make webpages that are fully featured and worthy for production.
+
+By default, this template supports JSX syntax with Tailwind CSS classes, React hooks, and Lucide React for icons. Do not install other packages for UI themes, icons, etc unless absolutely necessary or I request them.
+
+Use icons from lucide-react for logos.
+
+Use stock photos from unsplash where appropriate, only valid URLs you know exist. Do not download the images, only link to them in image tags.
+

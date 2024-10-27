@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 214 32% 91%;
+    --card: 222 47% 11%;
+    --card-foreground: 214 32% 91%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 214 32% 91%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 214 32% 91%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 214 32% 91%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 214 32% 91%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+/* Map Styles */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background-color: #1a1b1e;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.map-popup .leaflet-popup-content-wrapper {
+  @apply bg-white rounded-lg shadow-lg border border-gray-200;
+}
+
+.map-popup .leaflet-popup-tip {
+  @apply bg-white border border-gray-200;
+}
+
+/* Hide default routing machine control panel */
+.leaflet-routing-container {
+  display: none !important;
+}
+
+/* Custom marker styles */
+.custom-marker {
+  background: transparent;
+  border: none;
+}
+
+/* Route line hover effect */
+.leaflet-routing-alt {
+  @apply bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-4;
+}
+
+.leaflet-routing-alt:hover {
+  @apply bg-white;
+}
+
+/* Route alternatives styling */
+.leaflet-routing-alternatives-container {
+  @apply space-y-2;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-800/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-600/50 rounded-full backdrop-blur-lg;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500/50;
+}
+
+/* Animations */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+  
+  .animate-scale {
+    animation: scale 0.3s ease-out;
+  }
+
+  .animate-bounce {
+    animation: bounce 1s infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale {
+  from { transform: scale(0.95); }
+  to { transform: scale(1); }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
